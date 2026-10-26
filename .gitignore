@@ -1,0 +1,16 @@
+.Rproj.user/
+.Rhistory
+.RData
+.Ruserdata
+.DS_Store
+renv/library/
+renv/staging/
+_site/
+reports/*_files/
+reports/*.html
+
+# data is reproducible from the scripts
+data/raw/*
+data/processed/*
+!data/raw/.gitkeep
+!data/processed/.gitkeep
