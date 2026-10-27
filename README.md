@@ -4,7 +4,13 @@ This is a  data project on provincial mortgage delinquency in Canada, using publ
 
 ## Question
 
-How does mortgage delinquency by province move with unemployment and interest rates, and what would a rate shock imply?
+How does mortgage delinquency by province move with unemployment and interest rates, and how well can a simple model predict it?
+
+## Approach
+
+1. Estimate a provincial panel model of delinquency on unemployment and lagged interest rates.
+2. Validate it out of sample on the most recent quarters.
+3. Extension: use the model to project delinquency under simple rate and unemployment scenarios.
 
 ## Status
 
