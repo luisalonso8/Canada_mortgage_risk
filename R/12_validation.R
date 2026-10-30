@@ -55,4 +55,5 @@ scores <- errors |>
 
 print(scores)
 write_csv(scores, file.path("outputs", "validation_scores.csv"))
+write_csv(errors, file.path("outputs", "validation_errors.csv"))
 message("Script finished")
