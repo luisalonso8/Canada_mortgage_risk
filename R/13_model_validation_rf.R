@@ -19,7 +19,7 @@ panel <- read_csv(file.path("data", "processed", "model_panel.csv"),
   filter(!is.na(log_delinq_l1))
 
 # same test quarters as the regression validation
-test_dates <- tail(sort(unique(panel$date)), 8)
+test_dates <- tail(sort(unique(panel$date)), 16)
 prov_levels <- sort(unique(panel$province))
 
 prep_rf <- function(df) {
@@ -54,7 +54,7 @@ errors_rf <- bind_rows(results) |>
 
 errors_all <- bind_rows(errors_old, errors_rf)
 stopifnot(!anyNA(errors_all$prediction),
-          nrow(errors_rf) == 8 * 10 * 2)
+          nrow(errors_rf) == 16 * 10 * 2)
 
 scores <- errors_all |>
   group_by(model) |>

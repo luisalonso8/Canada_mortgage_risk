@@ -13,7 +13,7 @@ panel <- read_csv(file.path("data", "processed", "model_panel.csv"),
                               date <= as.Date("2021-10-01"))) |>
   filter(!is.na(log_delinq_l1))
 
-test_dates <- tail(sort(unique(panel$date)), 8)
+test_dates <- tail(sort(unique(panel$date)), 16)
 
 specs <- list(
   ar            = log_delinquency ~ log_delinq_l1 | province + qtr,
@@ -45,7 +45,7 @@ errors <- bind_rows(results) |>
                names_to = "model", values_to = "prediction") |>
   mutate(error = actual - prediction)
 
-stopifnot(!anyNA(errors$prediction), nrow(errors) == 8 * 10 * 5)
+stopifnot(!anyNA(errors$prediction), nrow(errors) == 16 * 10 * 5)
 
 scores <- errors |>
   group_by(model) |>
