@@ -44,5 +44,44 @@ within <- panel |>
   ungroup()
 print(round(cor(within[vars]), 2))
 
+# ---- assertions: the script stops if any of these fail ----
+stopifnot(
+  nrow(panel) == 540,
+  n_distinct(panel$province) == 10,
+  n_distinct(panel$date) == 54,
+  !anyDuplicated(panel[c("province", "date")]),
+  !anyNA(panel),
+  all(panel$delinquency_rate > 0)
+)
+
+# spot check against the original CMHC Excel (2012Q3)
+expected_2012q3 <- c("Newfoundland" = 0.24, "Prince Edward Island" = 0.57,
+                     "Nova Scotia" = 0.53, "New Brunswick" = 0.63,
+                     "Québec" = 0.33, "Ontario" = 0.31, "Manitoba" = 0.25,
+                     "Saskatchewan" = 0.37, "Alberta" = 0.60)
+
+check <- panel |>
+  filter(date == as.Date("2012-07-01"), province %in% names(expected_2012q3))
+
+stopifnot(
+  nrow(check) == 9,
+  all(abs(check$delinquency_rate - expected_2012q3[check$province]) < 0.005)
+)
+
+# lag check: rate_l2 in 2024Q2 must equal the policy rate in 2023Q4
+rate_2023q4 <- rate$policy_rate[rate$date == as.Date("2023-10-01")]
+rate_l2_2024q2 <- unique(panel$rate_l2[panel$date == as.Date("2024-04-01")])
+stopifnot(length(rate_l2_2024q2) == 1,
+          abs(rate_l2_2024q2 - rate_2023q4) < 1e-9)
+
+# lag check: Alberta unemployment_l1 in 2015Q2 must equal its 2015Q1 value
+ab <- unemp |> filter(province == "Alberta")
+stopifnot(abs(
+  panel$unemployment_l1[panel$province == "Alberta" & panel$date == as.Date("2015-04-01")] -
+    ab$unemployment_rate[ab$date == as.Date("2015-01-01")]
+) < 1e-9)
+
+message("All checks passed")
+
 write_csv(panel, file.path("data", "processed", "model_panel.csv"))
 message("Script finished")
