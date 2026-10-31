@@ -1,0 +1,271 @@
+scenario,province,date,delinquency_rate
+Baseline,Alberta,2025-10-01,0.25
+Baseline,British Columbia,2025-10-01,0.21
+Baseline,Manitoba,2025-10-01,0.2800000000000001
+Baseline,New Brunswick,2025-10-01,0.2800000000000001
+Baseline,Newfoundland,2025-10-01,0.30000000000000004
+Baseline,Nova Scotia,2025-10-01,0.25
+Baseline,Ontario,2025-10-01,0.27
+Baseline,Prince Edward Island,2025-10-01,0.19999999999999998
+Baseline,Québec,2025-10-01,0.18000000000000002
+Baseline,Saskatchewan,2025-10-01,0.41
+Baseline,Alberta,2026-01-01,0.2602590818726257
+Baseline,British Columbia,2026-01-01,0.21574665002144106
+Baseline,Manitoba,2026-01-01,0.2913759937812815
+Baseline,New Brunswick,2026-01-01,0.28691871142826453
+Baseline,Newfoundland,2026-01-01,0.30908022366055393
+Baseline,Nova Scotia,2026-01-01,0.2574519507878523
+Baseline,Ontario,2026-01-01,0.2750773506859559
+Baseline,Prince Edward Island,2026-01-01,0.20309424102197307
+Baseline,Québec,2026-01-01,0.18577990694337299
+Baseline,Saskatchewan,2026-01-01,0.4313614927756503
+Baseline,Alberta,2026-04-01,0.25634403155270546
+Baseline,British Columbia,2026-04-01,0.20983483685310642
+Baseline,Manitoba,2026-04-01,0.2868854765452172
+Baseline,New Brunswick,2026-04-01,0.27836770810525713
+Baseline,Newfoundland,2026-04-01,0.30142205661103777
+Baseline,Nova Scotia,2026-04-01,0.25096600587555534
+Baseline,Ontario,2026-04-01,0.2654101564486144
+Baseline,Prince Edward Island,2026-04-01,0.19534426294605212
+Baseline,Québec,2026-04-01,0.18148637662951775
+Baseline,Saskatchewan,2026-04-01,0.4291849784754018
+Baseline,Alberta,2026-07-01,0.2576191825491766
+Baseline,British Columbia,2026-07-01,0.2083505209768461
+Baseline,Manitoba,2026-07-01,0.2882095141462884
+Baseline,New Brunswick,2026-07-01,0.2757467634792435
+Baseline,Newfoundland,2026-07-01,0.3000612078472424
+Baseline,Nova Scotia,2026-07-01,0.2497312672951413
+Baseline,Ontario,2026-07-01,0.2615286567794773
+Baseline,Prince Edward Island,2026-07-01,0.19191269171057818
+Baseline,Québec,2026-07-01,0.18096187922807208
+Baseline,Saskatchewan,2026-07-01,0.43550058174577483
+Baseline,Alberta,2026-10-01,0.2649648763720406
+Baseline,British Columbia,2026-10-01,0.21183684170988257
+Baseline,Manitoba,2026-10-01,0.2963262631476497
+Baseline,New Brunswick,2026-10-01,0.27972923592024285
+Baseline,Newfoundland,2026-10-01,0.3058330927660068
+Baseline,Nova Scotia,2026-10-01,0.2544360630481738
+Baseline,Ontario,2026-10-01,0.26397301328242767
+Baseline,Prince Edward Island,2026-10-01,0.19315388404477699
+Baseline,Québec,2026-10-01,0.1847303354629476
+Baseline,Saskatchewan,2026-10-01,0.45206440793752195
+Baseline,Alberta,2027-01-01,0.27512021157169153
+Baseline,British Columbia,2027-01-01,0.21754881949172106
+Baseline,Manitoba,2027-01-01,0.3075832634924299
+Baseline,New Brunswick,2027-01-01,0.2866536873586514
+Baseline,Newfoundland,2027-01-01,0.31481801619647365
+Baseline,Nova Scotia,2027-01-01,0.2618137555169538
+Baseline,Ontario,2027-01-01,0.2692092948899318
+Baseline,Prince Edward Island,2027-01-01,0.19644865996183336
+Baseline,Québec,2027-01-01,0.19044058005765777
+Baseline,Saskatchewan,2027-01-01,0.47353993900129476
+Baseline,Alberta,2027-04-01,0.2703079653175667
+Baseline,British Columbia,2027-04-01,0.21150874683111898
+Baseline,Manitoba,2027-04-01,0.30210906921946934
+Baseline,New Brunswick,2027-04-01,0.2781221024810722
+Baseline,Newfoundland,2027-04-01,0.30676466202121927
+Baseline,Nova Scotia,2027-04-01,0.25502580904276206
+Baseline,Ontario,2027-04-01,0.2599994983278079
+Baseline,Prince Edward Island,2027-04-01,0.18923425068753688
+Baseline,Québec,2027-04-01,0.18583283786209603
+Baseline,Saskatchewan,2027-04-01,0.4691846044915603
+Baseline,Alberta,2027-07-01,0.2710075018406832
+Baseline,British Columbia,2027-07-01,0.20993780876626258
+Baseline,Manitoba,2027-07-01,0.3028007954219722
+Baseline,New Brunswick,2027-07-01,0.2755143707793672
+Baseline,Newfoundland,2027-07-01,0.3051392984252874
+Baseline,Nova Scotia,2027-07-01,0.25358862945503535
+Baseline,Ontario,2027-07-01,0.25643375695171217
+Baseline,Prince Edward Island,2027-07-01,0.18617500506041454
+Baseline,Québec,2027-07-01,0.18509931867016036
+Baseline,Saskatchewan,2027-07-01,0.47419107613946343
+Baseline,Alberta,2027-10-01,0.27810268693858126
+Baseline,British Columbia,2027-10-01,0.21337809008121206
+Baseline,Manitoba,2027-10-01,0.31064005549690615
+Baseline,New Brunswick,2027-10-01,0.2795040495317447
+Baseline,Newfoundland,2027-10-01,0.3107750080185275
+Baseline,Nova Scotia,2027-10-01,0.258188648702838
+Baseline,Ontario,2027-10-01,0.25905883644330846
+Baseline,Prince Edward Island,2027-10-01,0.18763419564323378
+Baseline,Québec,2027-10-01,0.18876257150045767
+Baseline,Saskatchewan,2027-10-01,0.4903521676112393
+Moderate stress,Alberta,2025-10-01,0.25
+Moderate stress,British Columbia,2025-10-01,0.21
+Moderate stress,Manitoba,2025-10-01,0.2800000000000001
+Moderate stress,New Brunswick,2025-10-01,0.2800000000000001
+Moderate stress,Newfoundland,2025-10-01,0.30000000000000004
+Moderate stress,Nova Scotia,2025-10-01,0.25
+Moderate stress,Ontario,2025-10-01,0.27
+Moderate stress,Prince Edward Island,2025-10-01,0.19999999999999998
+Moderate stress,Québec,2025-10-01,0.18000000000000002
+Moderate stress,Saskatchewan,2025-10-01,0.41
+Moderate stress,Alberta,2026-01-01,0.2602590818726257
+Moderate stress,British Columbia,2026-01-01,0.21574665002144106
+Moderate stress,Manitoba,2026-01-01,0.2913759937812815
+Moderate stress,New Brunswick,2026-01-01,0.28691871142826453
+Moderate stress,Newfoundland,2026-01-01,0.30908022366055393
+Moderate stress,Nova Scotia,2026-01-01,0.2574519507878523
+Moderate stress,Ontario,2026-01-01,0.2750773506859559
+Moderate stress,Prince Edward Island,2026-01-01,0.20309424102197307
+Moderate stress,Québec,2026-01-01,0.18577990694337299
+Moderate stress,Saskatchewan,2026-01-01,0.4313614927756503
+Moderate stress,Alberta,2026-04-01,0.2577527691961371
+Moderate stress,British Columbia,2026-04-01,0.2109879833952272
+Moderate stress,Manitoba,2026-04-01,0.28846205458261137
+Moderate stress,New Brunswick,2026-04-01,0.2798974767788181
+Moderate stress,Newfoundland,2026-04-01,0.3030785203684989
+Moderate stress,Nova Scotia,2026-04-01,0.2523451885994796
+Moderate stress,Ontario,2026-04-01,0.2668687169466823
+Moderate stress,Prince Edward Island,2026-04-01,0.19641777659477516
+Moderate stress,Québec,2026-04-01,0.18248373431707304
+Moderate stress,Saskatchewan,2026-04-01,0.4315435628805526
+Moderate stress,Alberta,2026-07-01,0.2618254767663485
+Moderate stress,British Columbia,2026-07-01,0.2117523778683156
+Moderate stress,Manitoba,2026-07-01,0.2929152740229082
+Moderate stress,New Brunswick,2026-07-01,0.28024903697126186
+Moderate stress,Newfoundland,2026-07-01,0.3049604770354929
+Moderate stress,Nova Scotia,2026-07-01,0.2538087710550566
+Moderate stress,Ontario,2026-07-01,0.2657987831953403
+Moderate stress,Prince Edward Island,2026-07-01,0.19504615885908924
+Moderate stress,Québec,2026-07-01,0.18391654626254378
+Moderate stress,Saskatchewan,2026-07-01,0.4426112462562586
+Moderate stress,Alberta,2026-10-01,0.2735565592681459
+Moderate stress,British Columbia,2026-10-01,0.21870580862581526
+Moderate stress,Manitoba,2026-10-01,0.3059348623009115
+Moderate stress,New Brunswick,2026-10-01,0.2887996641396495
+Moderate stress,Newfoundland,2026-10-01,0.3157499579300189
+Moderate stress,Nova Scotia,2026-10-01,0.26268634135288743
+Moderate stress,Ontario,2026-10-01,0.2725325342812319
+Moderate stress,Prince Edward Island,2026-10-01,0.19941704218326814
+Moderate stress,Québec,2026-10-01,0.19072035378281077
+Moderate stress,Saskatchewan,2026-10-01,0.46672293209663057
+Moderate stress,Alberta,2027-01-01,0.28992165210857745
+Moderate stress,British Columbia,2027-01-01,0.22925292475240389
+Moderate stress,Manitoba,2027-01-01,0.32413121305497306
+Moderate stress,New Brunswick,2027-01-01,0.30207562776746255
+Moderate stress,Newfoundland,2027-01-01,0.33175519474854165
+Moderate stress,Nova Scotia,2027-01-01,0.27589931001651175
+Moderate stress,Ontario,2027-01-01,0.28369272868611434
+Moderate stress,Prince Edward Island,2027-01-01,0.20701757869871912
+Moderate stress,Québec,2027-01-01,0.20068626468195497
+Moderate stress,Saskatchewan,2027-01-01,0.4990163415124996
+Moderate stress,Alberta,2027-04-01,0.29048080216016336
+Moderate stress,British Columbia,2027-04-01,0.22729345164214274
+Moderate stress,Manitoba,2027-04-01,0.3246551934332832
+Moderate stress,New Brunswick,2027-04-01,0.29887810125113884
+Moderate stress,Newfoundland,2027-04-01,0.32965822887840807
+Moderate stress,Nova Scotia,2027-04-01,0.2740581525048825
+Moderate stress,Ontario,2027-04-01,0.27940302368364406
+Moderate stress,Prince Edward Island,2027-04-01,0.20335663017297292
+Moderate stress,Québec,2027-04-01,0.1997013730115675
+Moderate stress,Saskatchewan,2027-04-01,0.5041994234753331
+Moderate stress,Alberta,2027-07-01,0.29672854710396646
+Moderate stress,British Columbia,2027-07-01,0.2298627918205174
+Moderate stress,Manitoba,2027-07-01,0.33153930971367357
+Moderate stress,New Brunswick,2027-07-01,0.3016631583714799
+Moderate stress,Newfoundland,2027-07-01,0.334099757649096
+Moderate stress,Nova Scotia,2027-07-01,0.2776564673272924
+Moderate stress,Ontario,2027-07-01,0.2807716229694073
+Moderate stress,Prince Edward Island,2027-07-01,0.20384468468008066
+Moderate stress,Québec,2027-07-01,0.20266690599295303
+Moderate stress,Saskatchewan,2027-07-01,0.5191960669607073
+Moderate stress,Alberta,2027-10-01,0.30998358273392773
+Moderate stress,British Columbia,2027-10-01,0.23783914340570408
+Moderate stress,Manitoba,2027-10-01,0.346250942066099
+Moderate stress,New Brunswick,2027-10-01,0.31154559352253275
+Moderate stress,Newfoundland,2027-10-01,0.34640136515841646
+Moderate stress,Nova Scotia,2027-10-01,0.28778665617068516
+Moderate stress,Ontario,2027-10-01,0.2887565997422904
+Moderate stress,Prince Edward Island,2027-10-01,0.20914404261665306
+Moderate stress,Québec,2027-10-01,0.21040177225149817
+Moderate stress,Saskatchewan,2027-10-01,0.546564736179801
+Severe stress,Alberta,2025-10-01,0.25
+Severe stress,British Columbia,2025-10-01,0.21
+Severe stress,Manitoba,2025-10-01,0.2800000000000001
+Severe stress,New Brunswick,2025-10-01,0.2800000000000001
+Severe stress,Newfoundland,2025-10-01,0.30000000000000004
+Severe stress,Nova Scotia,2025-10-01,0.25
+Severe stress,Ontario,2025-10-01,0.27
+Severe stress,Prince Edward Island,2025-10-01,0.19999999999999998
+Severe stress,Québec,2025-10-01,0.18000000000000002
+Severe stress,Saskatchewan,2025-10-01,0.41
+Severe stress,Alberta,2026-01-01,0.2602590818726257
+Severe stress,British Columbia,2026-01-01,0.21574665002144106
+Severe stress,Manitoba,2026-01-01,0.2913759937812815
+Severe stress,New Brunswick,2026-01-01,0.28691871142826453
+Severe stress,Newfoundland,2026-01-01,0.30908022366055393
+Severe stress,Nova Scotia,2026-01-01,0.2574519507878523
+Severe stress,Ontario,2026-01-01,0.2750773506859559
+Severe stress,Prince Edward Island,2026-01-01,0.20309424102197307
+Severe stress,Québec,2026-01-01,0.18577990694337299
+Severe stress,Saskatchewan,2026-01-01,0.4313614927756503
+Severe stress,Alberta,2026-04-01,0.2591692485518918
+Severe stress,British Columbia,2026-04-01,0.21214746704975287
+Severe stress,Manitoba,2026-04-01,0.29004729669857066
+Severe stress,New Brunswick,2026-04-01,0.2814356522902646
+Severe stress,Newfoundland,2026-04-01,0.30474408721619395
+Severe stress,Nova Scotia,2026-04-01,0.25373195061677994
+Severe stress,Ontario,2026-04-01,0.26833529295838
+Severe stress,Prince Edward Island,2026-04-01,0.19749718973364244
+Severe stress,Québec,2026-04-01,0.18348657297997978
+Severe stress,Saskatchewan,2026-04-01,0.433915108877267
+Severe stress,Alberta,2026-07-01,0.26610044953015016
+Severe stress,British Columbia,2026-07-01,0.21520977880285155
+Severe stress,Manitoba,2026-07-01,0.2976978675046986
+Severe stress,New Brunswick,2026-07-01,0.28482482163106765
+Severe stress,Newfoundland,2026-07-01,0.30993973936498015
+Severe stress,Nova Scotia,2026-07-01,0.257952850526905
+Severe stress,Ontario,2026-07-01,0.27013863038227276
+Severe stress,Prince Edward Island,2026-07-01,0.19823078789941306
+Severe stress,Québec,2026-07-01,0.18691945581815772
+Severe stress,Saskatchewan,2026-07-01,0.44983801061115125
+Severe stress,Alberta,2026-10-01,0.28242683386288664
+Severe stress,British Columbia,2026-10-01,0.2257975068953282
+Severe stress,Manitoba,2026-10-01,0.31585502741767346
+Severe stress,New Brunswick,2026-10-01,0.29816420773034635
+Severe stress,Newfoundland,2026-10-01,0.32598838481186815
+Severe stress,Nova Scotia,2026-10-01,0.27120414105881196
+Severe stress,Ontario,2026-10-01,0.28136960410526596
+Severe stress,Prince Edward Island,2026-10-01,0.20588328787581872
+Severe stress,Québec,2026-10-01,0.19690460289526343
+Severe stress,Saskatchewan,2026-10-01,0.48185676978794917
+Severe stress,Alberta,2027-01-01,0.30551940870205324
+Severe stress,British Columbia,2027-01-01,0.24158670973404875
+Severe stress,Manitoba,2027-01-01,0.3415694406892656
+Severe stress,New Brunswick,2027-01-01,0.3183272670654262
+Severe stress,Newfoundland,2027-01-01,0.34960359185401574
+Severe stress,Nova Scotia,2027-01-01,0.2907426659737061
+Severe stress,Ontario,2027-01-01,0.2989553698072673
+Severe stress,Prince Edward Island,2027-01-01,0.21815510423235562
+Severe stress,Québec,2027-01-01,0.21148316613928625
+Severe stress,Saskatchewan,2027-01-01,0.5258633719928717
+Severe stress,Alberta,2027-04-01,0.3121591194121143
+Severe stress,British Columbia,2027-04-01,0.24425615457241265
+Severe stress,Manitoba,2027-04-01,0.3488839143277529
+Severe stress,New Brunswick,2027-04-01,0.32118310127317296
+Severe stress,Newfoundland,2027-04-01,0.35426032174374694
+Severe stress,Nova Scotia,2027-04-01,0.2945108623958745
+Severe stress,Ontario,2027-04-01,0.3002546164344405
+Severe stress,Prince Edward Island,2027-04-01,0.21853294995518935
+Severe stress,Québec,2027-04-01,0.21460490428661533
+Severe stress,Saskatchewan,2027-04-01,0.5418273664549262
+Severe stress,Alberta,2027-07-01,0.32489075050841726
+Severe stress,British Columbia,2027-07-01,0.25167883467026797
+Severe stress,Manitoba,2027-07-01,0.3630053670507734
+Severe stress,New Brunswick,2027-07-01,0.3302937006924049
+Severe stress,Newfoundland,2027-07-01,0.36580882448517277
+Severe stress,Nova Scotia,2027-07-01,0.30400855911538976
+Severe stress,Ontario,2027-07-01,0.3074193709984897
+Severe stress,Prince Edward Island,2027-07-01,0.22319137554924456
+Severe stress,Québec,2027-07-01,0.22190181508959778
+Severe stress,Saskatchewan,2027-07-01,0.5684724355044298
+Severe stress,Alberta,2027-10-01,0.34551921314511835
+Severe stress,British Columbia,2027-10-01,0.2651043418489191
+Severe stress,Manitoba,2027-10-01,0.3859441587141201
+Severe stress,New Brunswick,2027-10-01,0.347260288378339
+Severe stress,Newfoundland,2027-10-01,0.3861118258790648
+Severe stress,Nova Scotia,2027-10-01,0.32077769447264554
+Severe stress,Ontario,2027-10-01,0.32185882959825585
+Severe stress,Prince Edward Island,2027-10-01,0.23311971686230168
+Severe stress,Québec,2027-10-01,0.23452162902148196
+Severe stress,Saskatchewan,2027-10-01,0.6092213526669606
