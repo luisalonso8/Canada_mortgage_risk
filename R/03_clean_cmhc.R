@@ -36,4 +36,4 @@ cat("Date range:", format(min(panel$date)), "to", format(max(panel$date)), "\n")
 print(summary(panel$delinquency_rate))
 
 write_csv(panel, file.path("data", "processed", "delinquency_panel.csv"))
-message("Script finished")source("R/03_clean_cmhc.R")
+message("Script finished")
