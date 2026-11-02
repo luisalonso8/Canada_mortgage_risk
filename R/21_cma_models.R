@@ -59,4 +59,12 @@ cma_cmp <- tidy_cma |>
             cma = round(estimate, 3))
 cat("\n=== Unemployment coefficient: provincial vs CMA ===\n")
 print(left_join(prov, cma_cmp, by = "spec"))
+
+fit_stats <- bind_rows(lapply(names(models), function(n) {
+  tibble(model = n,
+         n_obs = nobs(models[[n]]),
+         within_r2 = round(r2(models[[n]], "wr2"), 3))
+}))
+print(fit_stats)
+write_csv(fit_stats, file.path("outputs", "cma_fit.csv"))
 message("Script finished")

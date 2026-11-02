@@ -55,4 +55,11 @@ tidy_models <- bind_rows(lapply(names(models), function(n) {
 
 print(tidy_models, n = Inf)
 write_csv(tidy_models, file.path("outputs", "fixed_effects_models.csv"))
+fit_stats <- bind_rows(lapply(names(models), function(n) {
+  tibble(model = n,
+         n_obs = nobs(models[[n]]),
+         within_r2 = round(r2(models[[n]], "wr2"), 3))
+}))
+print(fit_stats)
+write_csv(fit_stats, file.path("outputs", "fixed_effects_fit.csv"))
 message("Script finished")
