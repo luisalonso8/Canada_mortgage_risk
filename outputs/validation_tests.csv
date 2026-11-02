@@ -1,0 +1,13 @@
+model,loss,n_quarters,quarters_better,mean_difference,statistic,p_value
+macro,mae,16,0,-0.3097,-9.2669,0
+rf_level,mae,16,4,-0.0249,-2.3046,0.0359
+rf_change,mae,16,11,0.0059,1.4409,0.1702
+naive,mae,16,11,0.0018,0.4584,0.6533
+ar_macro,mae,16,11,7e-4,0.3364,0.7413
+ar_macro_rate,mae,16,8,-7e-4,-0.1504,0.8825
+macro,mse,16,0,-0.1961,-5.4711,1e-4
+rf_level,mse,16,4,-0.0089,-2.0574,0.0575
+rf_change,mse,16,13,0.0014,1.5962,0.1313
+ar_macro,mse,16,11,5e-4,1.1081,0.2853
+naive,mse,16,9,6e-4,0.7478,0.4662
+ar_macro_rate,mse,16,8,6e-4,0.5428,0.5952

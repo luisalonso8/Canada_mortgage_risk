@@ -25,7 +25,8 @@ scripts <- c(
   "R/19_clean_cma_unemployment.R",
   "R/20_panel_CMA.R",
   "R/21_cma_models.R",
-  "R/22_heterogeinity.R"
+  "R/22_heterogeinity.R",
+  "R/23_validation_tests.R"
 )
 
 stopifnot(file.exists(file.path("data", "raw", "cmhc_delinquency.xlsx")))
