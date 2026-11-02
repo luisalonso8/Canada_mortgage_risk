@@ -79,3 +79,6 @@ outputs/figures figures used in the report
 reports/        Quarto report
 ```
 
+## Notes
+
+I used Claude as a coding assistant for this project, mainly for debugging R code. I made the design choices, ran all analyses, and am responsible for the results and conclusions.
