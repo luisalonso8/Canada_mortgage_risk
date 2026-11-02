@@ -18,7 +18,7 @@ How are unemployment and the Bank of Canada policy rate associated with mortgage
 
 ![Average delinquency under unemployment scenarios](outputs/figures/scenarios_average.png)
 
-##Stress scenarios
+## Stress scenarios
 Delinquency is projected ahead under three unemployment paths. In the baseline model, unemployment stays as its last level. In the moderate stress scenario it rises by 2 percentage points
 over four quarters and then holds. In the severe stress scenario it rises by 4 points. These are conditional projections, not forecasts. In this project, only unemployment is stressed.
 It is important to acknowledge that in a real downturn house prices and interest rates also move.
