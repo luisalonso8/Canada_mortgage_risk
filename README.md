@@ -1,21 +1,27 @@
 # Canada Mortgage Delinquency: Unemployment, Interest Rates and Out-of-Sample Validation
 
-Panel model of mortgage delinquency in Canada, 2012 to 2025, with out-of-sample validation and unemployment stress scenarios. Everything is done in R.
+Panel model of mortgage delinquency in Canada, 2012 to 2025, with out-of-sample validation and unemployment stress scenarios. 
 
 ## Question
 
-How are unemployment and the policy rate associated with mortgage delinquency across Canadian provinces, and how much of next quarter's delinquency can a model actually predict?
+How are unemployment and the Bank of Canada policy rate associated with mortgage delinquency across Canadian provinces and Census Metropolitan Areas (CMA), and how much of next quarter's delinquency can a model actually predict?
 
 ## Main results
 
 - **Unemployment moves with delinquency.** In the main provincial model, one more point of unemployment is associated with roughly 17 to 19% higher delinquency. The result holds with 33 metropolitan areas instead of 10 provinces (0.154 vs 0.171 on log delinquency) and when the COVID quarters are dropped.
+- **Delinquency is persistent and it shapes the rest.** Last quarter´s delinquency explains almost all of this quarter´s (coefficient 0.93 to 0.96). The effect of unemployment is real but builds slowly: 1% in the first quarter and 20 to 28% in the long run.
 - **It weakens within a province.** Comparing metropolitan areas of the same province in the same quarter, the association falls to 0.03 and is only marginally significant. Most of the link comes from the cycle areas share, not from local differences.
 - **The policy rate cannot be separated.** It is a single national series with one rate cycle in the sample. Its coefficient is negative at every lag and loses significance when errors are clustered by province.
-- **Predicting one quarter ahead is hard to improve on.** Delinquency barely changes from one quarter to the next. The best model, a random forest on quarterly changes, cuts the error by 8% against persistence alone. No model anticipated the turn of 2023.
-- **Stress scenarios.** Eight quarters after a 2-point rise in unemployment, delinquency is 11% above the baseline path. After a 4-point rise, 24% above.
+- **Predicting one quarter ahead is hard to improve on.** Adding unemployment or the policy rate does not beat persistence alone in a way that can be told apart from chance. A random forest (which can capture non linear effects), cuts the error by 8% when predicting quarterly changes (better in 13 of 16 quarters) but the gain is not statistically significant (p= 0.13) No model anticipated the turn of 2023.
+- **Stress scenarios.** Eight quarters after a 2-point rise in unemployment, delinquency is 11% above the baseline path and after a 4-point rise is 24% above.
 - **The association is positive in every province,** from 0.09 (Alberta) to 0.30 (Prince Edward Island).
 
 ![Average delinquency under unemployment scenarios](outputs/figures/scenarios_average.png)
+
+##Stress scenarios
+Delinquency is projected ahead under three unemployment paths. In the baseline model, unemployment stays as its last level. In the moderate stress scenario it rises by 2 percentage points
+over four quarters and then holds. In the severe stress scenario it rises by 4 points. These are conditional projections, not forecasts. In this project, only unemployment is stressed.
+It is important to acknowledge that in a real downturn house prices and interest rates also move.
 
 ## Models and results
 

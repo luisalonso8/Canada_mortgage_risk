@@ -1,0 +1,158 @@
+---
+title: "Canada Mortgage Delinquency: Unemployment, Interest Rates and Out-of-Sample Validation"
+author: "Luis Alonso Alvarez Portugal"
+date: today
+format:
+  html:
+    toc: true
+    toc-depth: 2
+    embed-resources: true
+execute:
+  echo: false
+  warning: false
+  message: false
+---
+
+```{r}
+#| label: setup
+library(dplyr)
+library(readr)
+library(tidyr)
+library(knitr)
+
+out <- function(f) file.path("..", "outputs", f)
+fig <- function(f) file.path("..", "outputs", "figures", f)
+rd  <- function(f) read_csv(out(f), show_col_types = FALSE)
+
+term_labels <- c(
+  unemployment_rate = "Unemployment (same quarter)",
+  unemployment_l1   = "Unemployment (1-quarter lag)",
+  rate_l2           = "Policy rate (2-quarter lag)",
+  rate_l4           = "Policy rate (4-quarter lag)",
+  covid             = "COVID indicator",
+  log_delinq_l1     = "Last quarter's delinquency (log)"
+)
+model_labels <- c(
+  naive = "Last-quarter benchmark",
+  ar = "Persistence only (baseline)",
+  ar_macro = "Persistence + unemployment",
+  ar_macro_rate = "Persistence + unemployment + policy rate",
+  macro = "Economy only",
+  rf_level = "Random forest (level)",
+  rf_change = "Random forest (change)"
+)
+```
+
+# Summary
+
+*[Three to five sentences with the main results.]*
+
+# Data
+
+*[Sources, how the panel is built, 540 province-quarters.]*
+
+```{r}
+#| label: descriptive
+kable(rd("descriptive_by_province.csv"), digits = 3,
+      caption = "Delinquency by province (descriptive statistics)")
+```
+
+*[Exploratory figures go here. Check the file names with `list.files("outputs/figures")`.]*
+
+# Methods
+
+## Why a panel with fixed effects
+
+*[Province effects absorb permanent differences. Quarter-of-year effects absorb seasonality. No time effects because they would absorb the national policy rate.]*
+
+## Omitted variable bias
+
+*[What the fixed effects remove, what they do not, and what that means for the coefficients.]*
+
+## COVID
+
+*[Indicator 2020Q2 to 2021Q4 and the model without those quarters.]*
+
+## Inference
+
+*[Errors clustered by province, only 10 clusters, why I repeat the models with 33 metropolitan areas.]*
+
+## Out-of-sample validation
+
+*[Expanding window, one quarter ahead, 16 test quarters, no tuning.]*
+
+## Scenarios
+
+*[Conditional projections from the persistence + unemployment model.]*
+
+# Results
+
+## Association with unemployment and the policy rate
+
+```{r}
+#| label: fe-table
+fe_file <- c("fixed_effects_models.csv", "baseline_models.csv")
+fe_file <- fe_file[file.exists(out(fe_file))][1]
+rd(fe_file) |>
+  mutate(term = recode(term, !!!term_labels),
+         cell = sprintf("%.3f (%.3f)", estimate, std.error)) |>
+  select(term, model, cell) |>
+  pivot_wider(names_from = model, values_from = cell) |>
+  kable(caption = "Provincial fixed-effects models. Coefficient (standard error).")
+```
+
+![](`r fig("unemployment_coefficients.png")`)
+
+![](`r fig("rate_lag_profile.png")`)
+
+## Robustness with 33 metropolitan areas
+
+```{r}
+#| label: cma-table
+rd("cma_models.csv") |>
+  mutate(term = recode(term, !!!term_labels),
+         cell = sprintf("%.3f (%.3f)", estimate, std.error)) |>
+  select(term, model, cell) |>
+  pivot_wider(names_from = model, values_from = cell) |>
+  kable(caption = "Metropolitan-area models. Coefficient (standard error).")
+```
+
+## Heterogeneity by province
+
+![](`r fig("heterogeneity.png")`)
+
+## Prediction
+
+```{r}
+#| label: validation-table
+rd("validation_scores_all.csv") |>
+  mutate(model = recode(model, !!!model_labels)) |>
+  select(Model = model, MSE = mse, RMSE = rmse, MAE = mae) |>
+  kable(digits = 4, caption = "Out-of-sample error, 16 test quarters. Log points.")
+```
+
+![](`r fig("validation_rmse.png")`)
+
+![](`r fig("validation_actual_vs_predicted.png")`)
+
+## Scenarios
+
+```{r}
+#| label: scenario-table
+rd("scenario_paths.csv") |>
+  filter(date == max(date)) |>
+  group_by(Scenario = scenario) |>
+  summarise(`Average delinquency (%)` = mean(delinquency_rate), .groups = "drop") |>
+  kable(digits = 3, caption = "Average delinquency at the end of the 8-quarter horizon.")
+```
+
+![](`r fig("scenarios_average.png")`)
+
+![](`r fig("scenarios_by_province.png")`)
+
+# Limitations
+
+*[Association not causation, one rate cycle, 10 provinces, Ontario weight, survey noise, scenarios without intervals.]*
+
+# Conclusions and next steps
+
