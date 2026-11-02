@@ -62,7 +62,8 @@ Methods, including why fixed effects and how I handle omitted variable bias and 
 ## How to reproduce
 
 1. Clone the repository and open `Canada_mortgage_risk.Rproj` in RStudio.
-2. Install the packages: [list of packages].
+2. Install the packages: install.packages(c("broom", "cansim", "dplyr", "fixest", "ggplot2",
+                   "jsonlite", "ranger", "readr", "readxl", "tidyr")).
 3. Download the CMHC Excel file and save it as `data/raw/cmhc_delinquency.xlsx`.
 4. Run `source("R/00_run_all.R")`. Statistics Canada and Bank of Canada data download automatically. It takes around [N] minutes.
 5. Render the report: `quarto render reports/report.qmd`.
@@ -78,6 +79,3 @@ outputs/figures figures used in the report
 reports/        Quarto report
 ```
 
-## Notes
-
-I used Claude (Anthropic) as a coding and methods assistant during development.
