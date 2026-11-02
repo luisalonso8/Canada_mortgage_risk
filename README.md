@@ -47,17 +47,17 @@ Each model adds one element to the baseline: unemployment, the policy rate, or a
 | Random forest (level) | 0.135 | 0.096 | +40% |
 | Economy only | 0.453 | 0.381 | +370% |
 
-Errors are in log points. The differences between the top models are small, and I did not test whether they are statistically different.
+Errors are in log points. Against the baseline (Diebold-Mariano test on 16 test quarters), only the economy-only model and the level random forest are distinguishable, and both are worse. The random forest on changes lowers the error in 13 of 16 quarters, but the average gain is small relative to quarter-to-quarter variation (p = 0.13).
 
 ## Limitations
 
-- The results are associations, not causal effects. Omitted variables that move with unemployment (house prices, income, credit conditions) can drive part of the link.
-- The sample has one rate cycle (2022 to 2024), so the policy rate is not identified.
-- There are 10 provinces. Clustered errors with so few groups are unreliable, which is why I repeat the models with 33 metropolitan areas. Ontario accounts for 15 of them.
+- The results are just associations, there are not causal effects. There are omitted variables that can move with unemployment (house prices, income, credit conditions) and also drive part of the link.
+- The policy rate has one large movement in the sample (2022 to 2023) and is the same for all provinces, so its effect cannot be separated from other national changes in those years.
+- There are 10 provinces so clustered errors with so few groups are unreliable. For that reason, models are repeated with 33 metropolitan areas. Ontario accounts for 15 of them.
 - Metropolitan unemployment comes from a survey with small samples, so it is measured with noise.
 - Scenario paths are conditional projections, not forecasts, and have no confidence bands. Averages across provinces are simple, not weighted by number of mortgages.
 
-Methods, including why fixed effects and how I handle omitted variable bias and COVID, are in the [report]([link to report]).
+Methods, including why fixed effects and how I handle omitted variable bias and COVID, are in the...
 
 ## Data
 
