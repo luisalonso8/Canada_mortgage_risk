@@ -28,7 +28,7 @@ fit_lag <- function(k) {
 }
 
 profile <- bind_rows(lapply(0:10, fit_lag)) |>
-  mutate(lower = estimate - 1.96 * se, upper = estimate + 1.96 * se)
+  mutate(lower = estimate - qt(0.975, df = 9) * se, upper = estimate + qt(0.975, df = 9) * se)
 
 print(profile, n = Inf)
 

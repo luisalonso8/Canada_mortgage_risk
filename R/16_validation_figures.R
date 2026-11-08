@@ -53,8 +53,8 @@ p2 <- ggplot() +
 stopifnot(file.exists(file.path("outputs", "baseline_models.csv")))
 coefs <- read_csv(file.path("outputs", "baseline_models.csv"), show_col_types = FALSE) |>
   filter(grepl("unemployment", term), model != "m6") |>
-  mutate(lower = estimate - 1.96 * std.error,
-         upper = estimate + 1.96 * std.error,
+  mutate(lower = estimate - qt(0.975, df = 9) * std.error,
+         upper = estimate + qt(0.975, df = 9) * std.error,
          spec = paste0(model, ": ", term))
 
 p3 <- ggplot(coefs, aes(estimate, spec)) +
