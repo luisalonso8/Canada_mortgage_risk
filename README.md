@@ -1,6 +1,6 @@
 # Canada Mortgage Delinquency: Unemployment, Interest Rates and Out-of-Sample Validation
 
-Panel model of mortgage delinquency in Canada, 2012 to March 2026, with out-of-sample validation and unemployment stress scenarios. 
+Panel model of mortgage delinquency in Canada, 2012Q3 to 2025Q4, with out-of-sample validation and unemployment stress scenarios.s. 
 
 ## Question
 
