@@ -1,5 +1,5 @@
 ---
-title: "Canada Mortgage Delinquency: Unemployment, Interest Rates and Out-of-Sample Validation"
+title: "Canada Mortgage Delinquency: Unemployment, the Policy Rate and Out-of-Sample Validation"
 author: "Luis Alonso Alvarez Portugal"
 date: today
 format:
@@ -45,11 +45,13 @@ model_labels <- c(
 
 # Summary
 
-*[Three to five sentences with the main results.]*
+
 
 # Data
 
-*[Sources, how the panel is built, 540 province-quarters.]*
+The panel covers 10 provinces and 54 quarters, from 2012Q3 to 2025Q4 (540 province-quarters). The CMHC data used here was published in March 2026.
+
+*[Sources: CMHC delinquency, Labour Force Survey unemployment, Bank of Canada policy rate.]*
 
 ```{r}
 #| label: descriptive
@@ -57,13 +59,15 @@ kable(rd("descriptive_by_province.csv"), digits = 3,
       caption = "Delinquency by province (descriptive statistics)")
 ```
 
-*[Exploratory figures go here. Check the file names with `list.files("outputs/figures")`.]*
+<!-- TODO: add the three exploratory figures here once the file names are checked
+     with list.files("outputs/figures"):
+     delinquency by province, unemployment by province, policy rate. -->
 
 # Methods
 
 ## Why a panel with fixed effects
 
-*[Province effects absorb permanent differences. Quarter-of-year effects absorb seasonality. No time effects because they would absorb the national policy rate.]*
+Provinces differ permanently in ways I cannot observe or measure well, such as housing market structure, lending practices and demographics. Province fixed effects remove these constant differences, so the model compares each province with itself over time: what happens to delinquency in a province when its unemployment changes. This removes omitted variables that are constant within a province, but not those that change over time, which I discuss in the next section. Quarter-of-year effects absorb seasonality. I do not include a full set of date effects, because they would absorb the national policy rate, which only varies over time.
 
 ## Omitted variable bias
 
@@ -89,6 +93,8 @@ kable(rd("descriptive_by_province.csv"), digits = 3,
 
 ## Association with unemployment and the policy rate
 
+*[Text.]*
+
 ```{r}
 #| label: fe-table
 fe_file <- c("fixed_effects_models.csv", "baseline_models.csv")
@@ -101,11 +107,11 @@ rd(fe_file) |>
   kable(caption = "Provincial fixed-effects models. Coefficient (standard error).")
 ```
 
-![](`r fig("unemployment_coefficients.png")`)
-
 ![](`r fig("rate_lag_profile.png")`)
 
 ## Robustness with 33 metropolitan areas
+
+*[Text.]*
 
 ```{r}
 #| label: cma-table
@@ -119,9 +125,13 @@ rd("cma_models.csv") |>
 
 ## Heterogeneity by province
 
+*[Text.]*
+
 ![](`r fig("heterogeneity.png")`)
 
 ## Prediction
+
+*[Text.]*
 
 ```{r}
 #| label: validation-table
@@ -131,11 +141,15 @@ rd("validation_scores_all.csv") |>
   kable(digits = 4, caption = "Out-of-sample error, 16 test quarters. Log points.")
 ```
 
+<!-- TODO: add the Diebold-Mariano table (validation_tests.csv) after checking its column names. -->
+
 ![](`r fig("validation_rmse.png")`)
 
 ![](`r fig("validation_actual_vs_predicted.png")`)
 
 ## Scenarios
+
+*[Text.]*
 
 ```{r}
 #| label: scenario-table
