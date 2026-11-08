@@ -85,6 +85,7 @@ p1 <- ggplot() +
   facet_wrap(~ province, ncol = 5) +
   scale_x_date(breaks = as.Date(c("2018-01-01", "2022-01-01", "2026-01-01")),
                date_labels = "%Y") +
+  scale_color_manual(values = cols) +
   labs(title = "Delinquency under unemployment scenarios, by province",
        subtitle = "Conditional projections from the persistence + unemployment model, not forecasts",
        x = NULL, y = "90+ days past due (%)", color = NULL) +

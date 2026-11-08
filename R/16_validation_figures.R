@@ -24,8 +24,8 @@ p1 <- ggplot(scores, aes(rmse, reorder(label, -rmse))) +
   geom_point(size = 3) +
   labs(title = "Out-of-sample error by model",
        subtitle = "RMSE in log points, 16 test quarters (2022Q1 to 2025Q4)",
-       caption = "Economy-only model (RMSE 0.45) not shown.",
-       x = "RMSE", y = NULL)
+       caption = "Economy-only model (RMSE 0.45) not shown. The axis does not start at zero.",
+       x = "RMSE", y = NULL) +
   theme_minimal()
 
 # 2. actual vs predicted, four provinces, three models
@@ -46,12 +46,13 @@ p2 <- ggplot() +
   geom_line(data = pred_df, aes(date, predicted, color = label), linewidth = 0.6) +
   facet_wrap(~ province, scales = "free_y") +
   labs(title = "Actual (black) and one-quarter-ahead predictions",
+       caption = "Four provinces shown as examples. Predictions for all ten are in outputs/validation_errors_all.csv.",
        x = NULL, y = "90+ days past due (%)", color = NULL) +
   theme_minimal() + theme(legend.position = "bottom")
 
 # 3. unemployment coefficient across specifications
-stopifnot(file.exists(file.path("outputs", "baseline_models.csv")))
-coefs <- read_csv(file.path("outputs", "baseline_models.csv"), show_col_types = FALSE) |>
+stopifnot(file.exists(file.path("outputs", "fixed_effects_models.csv")))
+coefs <- read_csv(file.path("outputs", "fixed_effects_models.csv"), show_col_types = FALSE) |>
   filter(grepl("unemployment", term), model != "m6") |>
   mutate(lower = estimate - qt(0.975, df = 9) * std.error,
          upper = estimate + qt(0.975, df = 9) * std.error,
