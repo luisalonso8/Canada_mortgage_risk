@@ -71,7 +71,7 @@ Provinces differ permanently in ways I cannot observe or measure well, such as h
 
 ## Omitted variable bias
 
-*[What the fixed effects remove, what they do not, and what that means for the coefficients.]*
+A fixed effects model adds a dummy variable for each province. These dummies control for any characteristic, observed or not, that is constant within a province over time. They do not control for factors that change over time within a province and move with unemployment, such as local income or house prices. If such factors exist, the unemployment coefficient is biased, and I cannot say in which direction. It as an association, not as a causal effect. The robustness checks show how much of the association is shared across places: in the metropolitan-area models, the coefficient falls from 0.154 to 0.093 when I remove shocks common to all areas in a quarter, and to 0.034 when I compare areas within the same province and quarter. Part of the association reflects common shocks.
 
 ## COVID
 
