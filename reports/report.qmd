@@ -75,7 +75,8 @@ A fixed effects model adds a dummy variable for each province. These dummies con
 
 ## COVID
 
-*[Indicator 2020Q2 to 2021Q4 and the model without those quarters.]*
+The COVID period was atypical: payment deferrals and income support likely pushed delinquency down while unemployment spiked, which broke the usual relationship between the two. I set these quarters apart with an indicator for 2020Q2 to 2021Q4. In the main model, the indicator is about -0.50, meaning delinquency was roughly 40% lower in those quarters than unemployment and the policy rate would predict. I also estimate the model without those quarters, and the unemployment coefficient rises from 0.171 to 0.228.
+
 
 ## Inference
 
