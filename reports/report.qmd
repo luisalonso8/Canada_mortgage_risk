@@ -84,13 +84,18 @@ The COVID period was atypical: payment deferrals and income support likely pushe
 
 ## Out-of-sample validation
 
-*[Expanding window, one quarter ahead, 16 test quarters, no tuning.]*
+The baseline model is a panel regression with province and quarter-of-year fixed effects, used to measure the association between unemployment, the policy rate and delinquency. To see whether a more flexible model predicts better, I also fit random forests (500 trees, no tuning), which do not assume a functional form and can capture nonlinear effects. 
+
+There is a comparison of all models on quarters they were not fitted on. For each of the 16 test quarters (2022Q1 to 2025Q4), I refit every model on all earlier data and predict one quarter ahead, which gives 160 predictions per model. The reference is a model that only uses last quarter’s delinquency, and I measure error as RMSE in log points. To test whether differences between models are real,  a Diebold-Mariano is performed to test on the average error per quarter. As there are only 16 test quarters the test has low power.
 
 ## Scenarios
 
 *[Conditional projections from the persistence + unemployment model.]*
 
 # Results
+
+
+
 
 ## Association with unemployment and the policy rate
 
