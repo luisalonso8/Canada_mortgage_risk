@@ -126,7 +126,7 @@ rd("cma_models.csv") |>
 
 ## Heterogeneity by province
 
-*[Text.]*
+Unemployment is positive in all provinces. In the provincial panel it ranges from 0.09 (Alberta) to 0.30 (Prince Edward Island), and in the metropolitan-area panel from 0.09 (Alberta) to 0.23 (British Columbia). British Columbia in the provincial panel has a lower bound just below zero (-0.001). Each estimate uses about 50 quarters of a highly persistent series, and metropolitan areas within a province are not independent. I therefore treat the intervals as indicative and do not rank provinces.
 
 ![](`r fig("heterogeneity.png")`)
 
