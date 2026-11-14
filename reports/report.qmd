@@ -80,7 +80,7 @@ The COVID period was atypical: payment deferrals and income support likely pushe
 
 ## Inference
 
-*[Errors clustered by province, only 10 clusters, why I repeat the models with 33 metropolitan areas.]*
+I cluster standard errors by province, but 10 clusters is too few to trust them fully, so I treat the intervals as indicative. As a check, I repeat the models on 33 metropolitan areas. The results are similar (0.154 against 0.171), though areas in the same province share shocks, so these standard errors are probably too small.
 
 ## Out-of-sample validation
 
