@@ -59,9 +59,11 @@ kable(rd("descriptive_by_province.csv"), digits = 3,
       caption = "Delinquency by province (descriptive statistics)")
 ```
 
-<!-- TODO: add the three exploratory figures here once the file names are checked
-     with list.files("outputs/figures"):
-     delinquency by province, unemployment by province, policy rate. -->
+![](`r fig("delinquency_by_province.png")`)
+
+![](`r fig("unemployment_by_province.png")`)
+
+![](`r fig("policy_rate.png")`)
 
 # Methods
 
@@ -166,7 +168,7 @@ rd("validation_tests.csv") |>
 
 ## Scenarios
 
-If unemployment rises by 2 points over four quarters, average delinquency after eight quarters is 0.309%, 11.5% above the 0.278% of the no-change scenario. A 4-point rise gives 0.345%, 24% above. The percentage increase is the same in every province, because the model uses a single unemployment coefficient. In percentage points the increase is largest in Saskatchewan, Manitoba and Newfoundland, which start from the highest delinquency. These are conditional projections, not forecasts, and they carry no uncertainty bands.
+If unemployment rises by 2 points over four quarters, average delinquency after eight quarters is 0.309%, 11.5% above theso 0.278% of the no-change scenario. A 4-point rise gives 0.345%, 24% above. The percentage increase is the same in every province, because the model uses a single unemployment coefficient. In percentage points the increase is largest in Saskatchewan, Manitoba and Newfoundland, which start from the highest delinquency. These are conditional projections, not forecasts, and they carry no uncertainty bands.
 
 ```{r}
 #| label: scenario-table
