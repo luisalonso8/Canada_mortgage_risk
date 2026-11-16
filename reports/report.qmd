@@ -45,7 +45,7 @@ model_labels <- c(
 
 # Summary
 
-
+The mortgage delinquency in Canada is closely tied to unemployment. Across 10 provinces, one more percentage point of unemployment goes with about 19% higher delinquency, and a panel of 33 metropolitan areas gives a similar figure (about 17%). Much of this relationship disappears when provinces are compared within the same quarter, so part of it reflects shocks shared across the country. The policy rate effect cannot be identified, because the sample covers a single large cycle. Delinquency changes slowly, so next quarter is hard to predict better than with last quarter’s value: The best model, a random forest fitted to quarterly changes, cuts the error by 8%, but the gain is not statistically significant (p = 0.13).
 
 # Data
 
