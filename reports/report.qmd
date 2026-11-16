@@ -137,7 +137,7 @@ Unemployment is positive in all provinces. In the provincial panel it ranges fro
 
 ## Prediction
 
-*[Text.]*
+Next quarter’s delinquency is mostly predicted by this quarter’s. A model that only uses that already does about as well as the others. Adding unemployment or the policy rate barely improves it: the average error falls from 0.096 to 0.094 and 0.093 log points. The best result comes from a random forest, which cuts the error by 8%. It beats the simple model in 13 of 16 quarters, but with so few quarters the gain cannot be told apart from chance (p = 0.13). Also, the models that leave out last quarter’s delinquency do much worse and all of them underestimated delinquency in the second half of 2023.
 
 ```{r}
 #| label: validation-table
