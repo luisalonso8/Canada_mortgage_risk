@@ -115,7 +115,7 @@ rd(fe_file) |>
 
 ## Robustness with 33 metropolitan areas
 
-*[Text.]*
+The metropolitan-area results are close to the provincial ones. The unemployment coefficient is 0.154 in the main model (0.171 for provinces) and 0.215 without the COVID quarters (0.228). It falls to 0.093 with date effects (0.148) and to 0.034 when areas are compared within the same province and quarter, where it is only significant at 10% (p = 0.086). With last quarter’s delinquency in the model, persistence is 0.932 and the short-run effect of unemployment is 0.013. The association persists in the city data, but a large part of it is shared across areas at the same time. The standard errors are small because there are many areas and quarters. But the observations are not independent: delinquency changes slowly, and areas in the same province move together. It is important to say that the uncertainty is larger than the standard errors suggest.
 
 ```{r}
 #| label: cma-table
