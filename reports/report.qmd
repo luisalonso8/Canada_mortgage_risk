@@ -95,12 +95,9 @@ The scenarios are conditional projections from the persistence plus unemployment
 
 # Results
 
-
-
-
 ## Association with unemployment and the policy rate
 
-*[Text.]*
+Unemployment is associated with delinquency in all specifications. In the main model, one more percentage point of unemployment goes with about 19% higher delinquency (coefficient 0.171). The policy rate is negative at every lag, the opposite of the expected sign. It is significant at two quarters (p = 0.009 and 0.029), borderline at four (p = 0.053), and not significant without the COVID quarters (p = 0.144). The figure shows the coefficient by lag: it is negative throughout, and the intervals include zero at lags 4 to 8. With a single rate cycle, it is not possible to split the effect of the policy rate from other things that changed between 2022 and 2025. Also, the delinquency is persistent (last quarter’s delinquency in the model, its coefficient is 0.955, the short-run effect of unemployment falls to 0.011 and the implied long-run effect is 0.245).
 
 ```{r}
 #| label: fe-table
