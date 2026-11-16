@@ -145,7 +145,20 @@ rd("validation_scores_all.csv") |>
   kable(digits = 4, caption = "Out-of-sample error, 16 test quarters. Log points.")
 ```
 
-<!-- TODO: add the Diebold-Mariano table (validation_tests.csv) after checking its column names. -->
+```{r}
+#| label: dm-table
+rd("validation_tests.csv") |>
+  filter(loss == "mse") |>
+  mutate(model = recode(model, !!!model_labels),
+         p_value = ifelse(p_value < 0.001, "<0.001", sprintf("%.3f", p_value))) |>
+  select(Model = model,
+         `Quarters better than baseline (of 16)` = quarters_better,
+         `Mean loss difference` = mean_difference,
+         `DM statistic` = statistic,
+         `p-value` = p_value) |>
+  kable(digits = 3,
+        caption = "Diebold-Mariano test against the persistence-only baseline (squared error). Positive differences mean lower error than the baseline.")
+```
 
 ![](`r fig("validation_rmse.png")`)
 
