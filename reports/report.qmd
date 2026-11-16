@@ -187,5 +187,8 @@ rd("scenario_paths.csv") |>
 
 *[Association not causation, one rate cycle, 10 provinces, Ontario weight, survey noise, scenarios without intervals.]*
 
-# Conclusions and next steps
+# Conclusions 
 
+Unemployment is closely tied to mortgage delinquency in Canada, both across provinces and across metropolitan areas. When provinces are compared within the same quarter, a weaker relationship remains, so much of the link comes from shocks that hit the whole country at once. The effect of the policy rate cannot be identified, because the data cover only one rate cycle. Delinquency moves slowly. That makes it hard to beat last quarter’s value as a prediction, and hard to learn what drives it from a short panel.
+
+One next version should add house prices, which are probably missing from the model. Lagged values will limit the risk that prices and delinquency affect each other, and the result will be read as an association. A later version will use a Bayesian hierarchical model. It gives uncertainty bands for the scenarios and handles the small number of provinces better.
