@@ -90,7 +90,8 @@ There is a comparison of all models on quarters they were not fitted on. For eac
 
 ## Scenarios
 
-*[Conditional projections from the persistence + unemployment model.]*
+The scenarios are conditional projections from the persistence plus unemployment model, not forecasts. Starting in 2025Q4, unemployment rises by 0 (baseline), 2 (moderate stress) or 4 (severe stress) percentage points over four quarters and then stays fixed, for a horizon of 8 quarters, with the COVID indicator off. These results are simple averages across provinces, not weighted by number of mortgages, and have no uncertainty bands.
+
 
 # Results
 
