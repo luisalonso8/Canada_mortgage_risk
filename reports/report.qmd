@@ -166,7 +166,7 @@ rd("validation_tests.csv") |>
 
 ## Scenarios
 
-*[Text.]*
+If unemployment rises by 2 points over four quarters, average delinquency after eight quarters is 0.309%, 11.5% above the 0.278% of the no-change scenario. A 4-point rise gives 0.345%, 24% above. The percentage increase is the same in every province, because the model uses a single unemployment coefficient. In percentage points the increase is largest in Saskatchewan, Manitoba and Newfoundland, which start from the highest delinquency. These are conditional projections, not forecasts, and they carry no uncertainty bands.
 
 ```{r}
 #| label: scenario-table
