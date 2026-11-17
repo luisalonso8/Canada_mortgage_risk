@@ -1,0 +1,3 @@
+baseline,challenger,quarters_better,statistic,p_value
+ar,ar_macro_hpi,13,3.291,0.005
+ar_macro,ar_macro_hpi,12,3.271,0.0052
