@@ -108,10 +108,11 @@ fe_file <- c("fixed_effects_models.csv", "baseline_models.csv")
 fe_file <- fe_file[file.exists(out(fe_file))][1]
 rd(fe_file) |>
   mutate(term = recode(term, !!!term_labels),
-         cell = sprintf("%.3f (%.3f)", estimate, std.error)) |>
+         cell = sprintf("%.3f<br>(%.3f)", estimate, std.error)) |>
   select(term, model, cell) |>
   pivot_wider(names_from = model, values_from = cell) |>
-  kable(caption = "Provincial fixed-effects models. Coefficient (standard error).")
+  kable(escape = FALSE,
+        caption = "Provincial fixed-effects models. Coefficient (standard error).")
 ```
 
 ![](`r fig("rate_lag_profile.png")`)
@@ -126,11 +127,14 @@ The metropolitan-area results are close to the provincial ones. The unemployment
 #| label: cma-table
 rd("cma_models.csv") |>
   mutate(term = recode(term, !!!term_labels),
-         cell = sprintf("%.3f (%.3f)", estimate, std.error)) |>
+         cell = sprintf("%.3f<br>(%.3f)", estimate, std.error)) |>
   select(term, model, cell) |>
   pivot_wider(names_from = model, values_from = cell) |>
-  kable(caption = "Metropolitan-area models. Coefficient (standard error).")
+  kable(escape = FALSE,
+        caption = "Metropolitan-area models. Coefficient (standard error).")
 ```
+
+c1 and c2 are the main model, with standard errors clustered by metropolitan area (c1) and by province (c2). c3 excludes the COVID quarters. c4 uses date fixed effects and c5 province-by-date fixed effects. c6 adds last quarter’s delinquency.
 
 ## Heterogeneity by province
 
