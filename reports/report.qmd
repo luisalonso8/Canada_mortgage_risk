@@ -19,6 +19,7 @@ library(dplyr)
 library(readr)
 library(tidyr)
 library(knitr)
+options(knitr.kable.NA = "")
 
 out <- function(f) file.path("..", "outputs", f)
 fig <- function(f) file.path("..", "outputs", "figures", f)
@@ -114,6 +115,8 @@ rd(fe_file) |>
 ```
 
 ![](`r fig("rate_lag_profile.png")`)
+
+m1 and m2 include the policy rate at a 2-quarter lag, and m3 at a 4-quarter lag. m4 is m3 without the COVID quarters. m5 uses date fixed effects. m6 adds last quarter’s delinquency.
 
 ## Robustness with 33 metropolitan areas
 
