@@ -2,7 +2,7 @@
 
 Panel model of mortgage delinquency in Canada, 2012Q3 to 2025Q4, with out-of-sample validation and unemployment stress scenarios.
 
-Full report: [Read the report](https://luisalonso8.github.io/Canada_mortgage_risk/)
+[Read the report](https://luisalonso8.github.io/Canada_mortgage_risk/)
 
 ## Question
 
