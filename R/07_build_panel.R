@@ -4,6 +4,7 @@ library(readr)
 delinq <- read_csv(file.path("data", "processed", "delinquency_panel.csv"))
 unemp  <- read_csv(file.path("data", "processed", "unemployment_panel.csv"))
 rate   <- read_csv(file.path("data", "processed", "policy_rate_quarterly.csv"))
+hpi    <- read_csv(file.path("data", "processed", "house_price_panel.csv"))
 
 # lags are computed on the full series, before trimming to the delinquency period
 rate <- rate |>
@@ -19,12 +20,22 @@ unemp <- unemp |>
   mutate(unemployment_l1 = lag(unemployment_rate, 1)) |>
   ungroup()
 
+hpi <- hpi |>
+  arrange(province, date) |>
+  group_by(province) |>
+  mutate(hpi_yoy_l1 = lag(hpi_yoy, 1),
+         hpi_yoy_l2 = lag(hpi_yoy, 2),
+         hpi_yoy_l4 = lag(hpi_yoy, 4)) |>
+  ungroup()
+
 panel <- delinq |>
   select(province, date, year, qtr, delinquency_rate) |>
   left_join(select(unemp, province, date, unemployment_rate, unemployment_l1),
             by = c("province", "date")) |>
   left_join(select(rate, date, policy_rate, starts_with("rate_l")),
             by = "date") |>
+  left_join(select(hpi, province, date, hpi, hpi_yoy, starts_with("hpi_yoy_l")),
+            by = c("province", "date")) |>
   mutate(log_delinquency = log(delinquency_rate))
 
 # checks
@@ -32,7 +43,8 @@ cat("Rows:", nrow(panel), "(expected 540)\n")
 cat("Missing values per column:\n")
 print(colSums(is.na(panel)))
 
-vars <- c("log_delinquency", "unemployment_rate", "policy_rate", "rate_l2")
+vars <- c("log_delinquency", "unemployment_rate", "policy_rate", "rate_l2",
+          "hpi_yoy_l1")
 
 cat("\nPooled correlations:\n")
 print(round(cor(panel[vars]), 2))
@@ -79,6 +91,13 @@ ab <- unemp |> filter(province == "Alberta")
 stopifnot(abs(
   panel$unemployment_l1[panel$province == "Alberta" & panel$date == as.Date("2015-04-01")] -
     ab$unemployment_rate[ab$date == as.Date("2015-01-01")]
+) < 1e-9)
+
+# lag check: Ontario hpi_yoy_l1 in 2020Q1 must equal its 2019Q4 growth
+on <- hpi |> filter(province == "Ontario")
+stopifnot(abs(
+  panel$hpi_yoy_l1[panel$province == "Ontario" & panel$date == as.Date("2020-01-01")] -
+    on$hpi_yoy[on$date == as.Date("2019-10-01")]
 ) < 1e-9)
 
 message("All checks passed")
