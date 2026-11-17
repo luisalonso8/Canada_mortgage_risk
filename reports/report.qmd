@@ -185,7 +185,14 @@ rd("scenario_paths.csv") |>
 
 # Limitations
 
-*[Association not causation, one rate cycle, 10 provinces, Ontario weight, survey noise, scenarios without intervals.]*
+- The estimates are associations. Factors that move with unemployment, such as local income losses or house prices, can bias them. With province-by-date effects the coefficient falls from 0.154 to 0.034, so much of the link is shared across provinces.
+- The sample has one large rate cycle, so the effect of the policy rate cannot be identified. The policy rate is also not the mortgage rate that borrowers pay.
+- Ten provinces are too few for reliable standard errors. The 33-area panel helps, but metropolitan unemployment comes from a survey with more sampling noise, which likely pulls coefficients toward zero.
+- Ontario has 15 of the 33 metropolitan areas, so it weighs heavily in the pooled results.
+- The long-run effect depends on persistence close to one (0.955) and is fragile.
+- Validation uses only 16 test quarters. The test has low power, so a non-significant result does not mean the models are equal. The random forests were not tuned.
+- The scenarios have no uncertainty bands and use a simple average across provinces, not one weighted by portfolio size.
+
 
 # Conclusions 
 
