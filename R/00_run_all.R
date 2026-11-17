@@ -9,6 +9,7 @@ scripts <- c(
   "R/03_clean_cmhc.R",
   "R/05_clean_unemployment.R",
   "R/06_clean_policy_rate.R",
+  "R/06b_clean_house_prices.R",
   "R/07_build_panel.R",
   "R/08_EDA_plots.R",
   "R/09_EDA.R",
@@ -26,7 +27,9 @@ scripts <- c(
   "R/20_panel_CMA.R",
   "R/21_cma_models.R",
   "R/22_heterogeinity.R",
-  "R/23_validation_tests.R"
+  "R/23_validation_tests.R",
+  # v2: house prices
+  "R/24_house_price_models.R"
 )
 
 stopifnot(file.exists(file.path("data", "raw", "cmhc_delinquency.xlsx")))
