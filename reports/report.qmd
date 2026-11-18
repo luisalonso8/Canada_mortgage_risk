@@ -85,7 +85,7 @@ The COVID period was atypical: payment deferrals and income support likely pushe
 
 I cluster standard errors by province, but 10 clusters is too few to trust them fully, so I treat the intervals as indicative. As a check, I repeat the models on 33 metropolitan areas. The results are similar (0.154 against 0.171), though areas in the same province share shocks, so these standard errors are probably too small.
 
-## Out-of-sample validation
+## Out-of-sample validation 
 
 The baseline model is a panel regression with province and quarter-of-year fixed effects, used to measure the association between unemployment, the policy rate and delinquency. To see whether a more flexible model predicts better, I also fit random forests (500 trees, no tuning), which do not assume a functional form and can capture nonlinear effects. 
 
@@ -189,6 +189,35 @@ rd("scenario_paths.csv") |>
 ![](`r fig("scenarios_average.png")`)
 
 ![](`r fig("scenarios_by_province.png")`)
+
+## v2: Adding house prices
+
+### Data
+I added the Statistics Canada New Housing Price Index (table 18-10-0205-01) to the panel. The variable is quarterly year-over-year growth by province, entered at lags of 0, 1, 2 and 4 quarters.
+
+### Lag profile
+House price growth is negatively associated with delinquency at every lag, and all four coefficients are significant (p < 0.001). The effect grows with the lag, from -0.036 at lag 0 to -0.060 at four quarters. House price changes take about a year to show up fully in delinquency.
+
+### Models with and without house prices
+All models explain the log delinquency rate, with province fixed effects and standard errors clustered by province.
+
+- **Specification a:** unemployment (1-quarter lag), interest rate (4-quarter lag) and a covid indicator, with quarter fixed effects.
+- **Specification b:** unemployment (1-quarter lag) only, with a fixed effect for every date. It uses only differences across provinces, so it is the strictest test.
+- **Specification c:** adds last quarter's delinquency as a regressor, alongside unemployment and the covid indicator.
+
+Adding house prices reduces the unemployment coefficient by 27% (a), 11% (b) and 33% (c). Part of what unemployment appeared to explain was house prices. House prices are significant in specifications a and c (p < 0.001) but not in b (p = 0.18).
+
+### Out-of-sample validation with house prices
+
+| Model | Root mean squared error | Change vs. baseline |
+|---|---|---|
+| Autoregressive baseline | 0.0964 |     |
+| Baseline + macro variables | 0.0940 | -2.5% |
+| Baseline + macro variables + house prices | 0.0832 | -13.7% |
+
+The house price model beats the baseline (Diebold-Mariano p = 0.005, better in 13 quarters) and the macro-only model (p = 0.0052, better in 12 quarters).
+
+The v2 house price result is predictive, not causal. Standard errors are clustered by province, and there are only ten provinces, so p-values should be read with caution.
 
 # Limitations
 

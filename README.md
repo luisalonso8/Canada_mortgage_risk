@@ -69,6 +69,19 @@ Full methods, results and limitations are in the [report](https://luisalonso8.gi
 - Unemployment rate: Statistics Canada Labour Force Survey, tables 14-10-0287-01 (provinces) and 14-10-0459-01 (metropolitan areas), seasonally adjusted.
 - Policy rate: Bank of Canada Valet API, series V39079.
 
+## v2: house prices
+
+v2 adds the Statistics Canada New Housing Price Index (table 18-10-0205-01) to the panel. I use quarterly year-over-year growth by province, with lags of 1, 2 and 4 quarters.
+
+Main result: adding house price growth lowers out-of-sample forecast error (root mean squared error) by 13.7% against an autoregressive baseline, and the gain over the macro-only model is statistically significant (Diebold-Mariano p = 0.005). The effect is strongest at a four-quarter lag, and house prices absorb part of the unemployment effect. The result is predictive, not causal, and the sample is small.
+
+- `R/06b_clean_house_prices.R` cleans the index
+- `R/07_build_panel.R` joins it to the panel and checks the lags
+- `R/24_house_price_models.R` compares models with and without house prices, estimates the lag profile and runs the out-of-sample tests
+- `outputs/house_price_*.csv` holds the v2 results
+
+Results from the first release are unchanged and remain available at tag `v1.0.0`.
+
 ## How to reproduce
 
 1. Clone the repository and open the project folder in R (the `Canada_mortgage_risk.Rproj` file opens it in RStudio).
