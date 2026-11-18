@@ -207,9 +207,9 @@ All models explain the log delinquency rate, with province fixed effects and sta
 
 Adding house prices reduces the unemployment coefficient by 27% (a), 11% (b) and 33% (c). Part of what unemployment appeared to explain was house prices. House prices are significant in specifications a and c (p < 0.001) but not in b (p = 0.18).
 
-Variance inflation factors (VIF) for the regressors are all below 5 (house price growth 1.6, interest rate 1.3, covid indicator 1.7). Unemployment is the highest at 4.7, which matches its coefficient shrinking when house prices are added.
+Variance inflation factors (VIF) for the regressors are all below 5 (house price growth 1.6, interest rate 1.3, covid indicator 1.7). Unemployment is the highest at 4.7, which matches its coefficient shrinking when house prices are added. Also, residual diagnostics show no strong departures from normality or constant variance.
 
-Also, residual diagnostics show no strong departures from normality or constant variance.
+Results are similar when estimated by Poisson regression on the original rate: house price growth remains negative and significant (-0.053, p < 0.001), and the other coefficients keep their signs.
 
 ### Out-of-sample validation with house prices
 
