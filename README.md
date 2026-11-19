@@ -1,4 +1,4 @@
-# Canada Mortgage Delinquency: Unemployment, the Policy Rate and Out-of-Sample Validation
+# Canada Mortgage Delinquency: Unemployment, policy rate and out-of-sample validation
 
 Panel model of mortgage delinquency in Canada, 2012Q3 to 2025Q4, with out-of-sample validation and unemployment stress scenarios.
 
