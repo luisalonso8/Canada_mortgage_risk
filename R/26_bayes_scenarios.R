@@ -113,3 +113,48 @@ p <- ggplot() +
 ggsave(file.path("outputs", "figures", "bayes_scenarios_average.png"), p,
        width = 8, height = 4.5, dpi = 150)
 print(p)
+
+# ---- Stress minus baseline, with the same random noise in every scenario ----
+simulate_avg <- function(shock, seed = 123) {
+  set.seed(seed)                       # same noise for every scenario
+  prev <- rep_row(last$log_delinquency)
+  out  <- matrix(NA_real_, nrow = D, ncol = horizon)
+  for (h in seq_len(horizon)) {
+    u_prev <- last$unemployment_rate + shock * min(h - 1, 4) / 4
+    uw <- u_prev - um
+    hw <- hpi_hold - hm
+    q  <- qtr_of(future_dates[h])
+    qeff <- if (q == 1) 0 else b(paste0("qtr", q))
+    mu <- b("Intercept") + re_int +
+      b("log_delinq_l1") * prev +
+      (b("unemp_within") + re_slope) * rep_row(uw) +
+      b("unemp_mean") * rep_row(um) +
+      b("hpi_within") * rep_row(hw) +
+      b("hpi_mean")   * rep_row(hm) +
+      b("rate_l4")    * rep_row(rate_hold) +
+      qeff
+    new_log <- mu + matrix(rnorm(D * P, 0, rep(draws$sigma, times = P)), nrow = D)
+    out[, h] <- rowMeans(exp(new_log))   # average across provinces, per draw
+    prev <- new_log
+  }
+  out
+}
+
+sim_base <- simulate_avg(0)
+sim_mod  <- simulate_avg(2)
+sim_sev  <- simulate_avg(4)
+
+summarise_diff <- function(sim, label) {
+  m <- 100 * (sim / sim_base - 1)      # percent difference vs baseline, per draw
+  tibble(scenario = label, date = future_dates,
+         lower  = apply(m, 2, quantile, probs = 0.1),
+         median = apply(m, 2, quantile, probs = 0.5),
+         upper  = apply(m, 2, quantile, probs = 0.9),
+         prob_higher = apply(m, 2, function(x) mean(x > 0)))
+}
+diff_tbl <- bind_rows(summarise_diff(sim_mod, "Moderate stress"),
+                      summarise_diff(sim_sev, "Severe stress"))
+write_csv(diff_tbl, file.path("outputs", "bayes_scenario_difference.csv"))
+
+print(diff_tbl |> filter(date == max(date)) |>
+        mutate(across(where(is.numeric), ~ round(.x, 2))))
